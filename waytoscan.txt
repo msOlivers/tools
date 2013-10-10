@@ -1,0 +1,6 @@
+the algorithm goes
+1 host each second each subnet * by 60 subnets = 1 host each minute on each subnet gets hit
+so it will take 255 m to scan a whole class c on 60 subnets! thats a bit more than 4 hours. so you can scan a whole class B
+on around 18-19 hours!
+with this we only hit each subnet once a minute but we are scanning simultaneously 60 subnets! but only hitting one each minute
+to not trigger IDS's 
