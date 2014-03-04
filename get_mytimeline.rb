@@ -1,31 +1,34 @@
 #!/usr/bin/env ruby
 
+#gem install rufus-scheduler
+#gem install colorize
+#gem install twitter
+
+
 require 'twitter'
-require 'rufus/scheduler'
-require 'eventmachine'
+require 'rufus-scheduler'
 require 'colorize'
 
-Twitter.configure do |config|
-  config.consumer_key = 'xxxxxxxxx'
-  config.consumer_secret = 'xxxxxxxx'
-  config.oauth_token = 	'xxxxxxxxxxx'
-  config.oauth_token_secret = 'xxxxxxxx'
+@client = Twitter::REST::Client.new do |config|
+  config.consumer_key = ENV[ 'TWITTER_CONSUMER_KEY' ]
+  config.consumer_secret = ENV[ 'TWITTER_CONSUMER_SECRECT' ]
+  config.oauth_token =  ENV[ 'TWITTER_OAUTH_TOKEN' ]
+  config.oauth_token_secret = ENV[ 'TWITTER_OAUTH_TOKEN_SECRECT' ]
 end
 
 
 def check() 
   system "clear"
-  Twitter.home_timeline.each do |t|
-    puts "#{t.from_user}:".red +  "#{t.text}".green
+  @client.home_timeline.each do |t|
+    puts "#{t.user.screen_name}:".red +  "#{t.text}".green
   end
 end
 
 
-EM.run do
-  scheduler = Rufus::Scheduler::EmScheduler.start_new
-  
+scheduler = Rufus::Scheduler.new 
+check()
+scheduler.every '1m' do
   check()
-  scheduler.every '1m' do
-    check()
-  end
 end
+
+scheduler.join
