@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
+# Christian Fernandez 2014 Hispagatos.org
+# Script to check if email is possible fake or not
+# script on alpha stage.. the idea is to pass eventually
+# name combinations of someone, organization or company to
+# find all possible email accounts they may hace across popular
+# email networks like gmail, hotmail etc.. and their own domains linked
+
 
 require 'resolv'
 require 'net/smtp'
