@@ -1,12 +1,18 @@
 #!/usr/bin/python
+# Chris Fernandez
 # always wanted to write my own passwd cracker this uses the modern GNU/Linux
 # sha512 hashing with salt, this may not be usefull when cracking in the real world
 # but can be usefull if you dont have your tools with you and you just have python.
- 
+
+# make sure you delete de empty lines of the linux shadow file.
+# and leave root and real users if not it will bark!
+
+
 import crypt
+import os
 
 def testPass(salt, cryptPass):
-  dictFile = open('/home/rek2/dictionary.txt','r')
+  dictFile = open(os.path.expanduser('~/dictionary.txt'),'r')
 
   for word in dictFile.readlines():
     word = word.strip('\n')
@@ -17,7 +23,7 @@ def testPass(salt, cryptPass):
       return
 
 def main():
-  passFile = open('/home/rek2/shadow')
+  passFile = open(os.path.expanduser("~/shadow"))
 
   for line in passFile.readlines():
     if ":" in line:

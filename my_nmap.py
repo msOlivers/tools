@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Christian Fernandez just playing around with python and nmap module
 # sudo pip install nmap
 # arch linux yaourt python-pip to install python modules
 
