@@ -2,18 +2,22 @@
 # gem install colorize
 # gem install twitter
 
+# WARNING API changed need to update
+
 require 'twitter'
 require 'colorize'
 
-Twitter.configure do |config|
-  config.consumer_key = 'xxxxxx'
-  config.consumer_secret = 'xxxxxx'
-  config.oauth_token = 	'xxxx'
-  config.oauth_token_secret = 'xxxxx'
+@client = Twitter::REST::Client.new do |config|
+  config.consumer_key = ENV[ 'TWITTER_CONSUMER_KEY' ]
+  config.consumer_secret = ENV[ 'TWITTER_CONSUMER_SECRECT' ]
+  config.oauth_token =  ENV[ 'TWITTER_OAUTH_TOKEN' ]
+  config.oauth_token_secret = ENV[ 'TWITTER_OAUTH_TOKEN_SECRECT' ]
 end
 
+
+
 ARGV.each do |a|
-  Twitter.search("#{a}", :count => "200").results.map do |s|
+  @client.search("#{a}", :count => "200").results.map do |s|
     puts "#{s.from_user}:".red + "#{s.text}".green
   end
 end
