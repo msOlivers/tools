@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 6.40 scan initiated Sat Feb 15 20:53:53 2014 as: /usr/bin/nmap -oX tmp.xml -p 20,21,22,23,25,80,110,443,512,522,8080,1080 -&#45; -sP -->
+<nmaprun scanner="nmap" args="/usr/bin/nmap -oX tmp.xml -p 20,21,22,23,25,80,110,443,512,522,8080,1080 -&#45; -sP" start="1392515633" startstr="Sat Feb 15 20:53:53 2014" version="6.40" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="12" services="20-23,25,80,110,443,512,522,1080,8080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<runstats><finished time="1392515633" timestr="Sat Feb 15 20:53:53 2014" elapsed="0.08" summary="Nmap done at Sat Feb 15 20:53:53 2014; 0 IP addresses (0 hosts up) scanned in 0.08 seconds" exit="success"/><hosts up="0" down="0" total="0"/>
+</runstats>
+</nmaprun>

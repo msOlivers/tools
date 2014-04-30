@@ -1,4 +1,6 @@
 #!/usr/bin/ruby
+#to show all arp connections.. just something that I wrote to use in a bigger
+#tool.
 
 require 'socket'
 
