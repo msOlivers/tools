@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# sudo pip install nmap
+# arch linux yaourt python-pip to install python modules
+
 import nmap
 import socket
 import optparse
