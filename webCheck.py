@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 import http.client, sys
-from optparse import OptionParser
+import argparse
 
 usageString = "Usage: %prog [options] hostname"
-parser = OptionParser(usage=usageString)
-parser.add_option("-p", "--port", dest="port", metavar="PORT", default=80, type="int", help="Port to connect to")
+parser = argparse.ArgumentParser(usage=usageString)
+parser.add_argument("-p", "--port", dest="port", metavar="PORT", default=80, type="int", help="Port to connect to")
 
 (opts,args) = parser.parse_args()
 
