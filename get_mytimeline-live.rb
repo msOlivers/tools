@@ -8,7 +8,7 @@
 require 'twitter'
 require 'colorize'
 
-topics = ["cybersecurity", "infosec", "cyberwar", "hacking"]
+topics = ["cybersecurity", "infosec", "cyberwar"]
 
 @client = Twitter::Streaming::Client.new do |config|
   config.consumer_key = ENV[ 'TWITTER_CONSUMER_KEY' ]
