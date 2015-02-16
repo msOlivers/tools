@@ -6,7 +6,6 @@
 
 
 require 'twitter'
-require 'rufus-scheduler'
 require 'colorize'
 
 topics = ["cybersecurity", "infosec", "cyberwar", "hacking"]
@@ -19,5 +18,7 @@ topics = ["cybersecurity", "infosec", "cyberwar", "hacking"]
 end
 
 @client.filter(track: topics.join(",")) do |object|
-  puts "#{object.text}" if object.is_a?(Twitter::Tweet)
+ # puts "#{object.text}" if object.is_a?(Twitter::Tweet)
+   puts "#{object.user.screen_name.yellow} - #{object.text.white}"  if object.is_a?(Twitter::Tweet)
+
 end
