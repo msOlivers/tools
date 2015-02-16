@@ -17,6 +17,7 @@ topics = ["cybersecurity", "infosec", "cyberwar", "hacking"]
   config.access_token_secret = ENV[ 'TWITTER_OAUTH_TOKEN_SECRECT' ]
 end
 
+system "clear"
 @client.filter(track: topics.join(",")) do |object|
  # puts "#{object.text}" if object.is_a?(Twitter::Tweet)
    puts "#{object.user.screen_name.yellow} - #{object.text.white}"  if object.is_a?(Twitter::Tweet)
