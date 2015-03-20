@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #gem install OptionParser
-
+#gem install dnsruby
 
 require 'dnsruby'
 include Dnsruby
