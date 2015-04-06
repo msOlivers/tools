@@ -6,6 +6,9 @@ require 'dnsruby'
 include Dnsruby
 require 'optparse'
 
+
+
+ARGV << '-h' if ARGV.empty?
 options = {}
 
 OptionParser.new do |opts|
