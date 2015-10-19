@@ -45,5 +45,5 @@ int_number = gets
 if  list.key?(int_number.to_i)
   monitor(list.fetch(int_number.to_i))
 else
-  puts "ese interface no existe"
+  puts "Selected interface does not exists"
 end
